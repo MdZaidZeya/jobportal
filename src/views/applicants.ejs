@@ -1,0 +1,30 @@
+<% layout('layout') %>
+
+<h2>Applicants for <%= job.title %></h2>
+
+<% if (applicants.length === 0) { %>
+  <p>No applicants yet.</p>
+<% } else { %>
+  <ul class="applicant-list">
+    <% applicants.forEach(applicant => { %>
+      <li>
+        <h3><%= applicant.name %></h3>
+        <p>Email: <%= applicant.email %></p>
+        <p>Contact: <%= applicant.contact %></p>
+        <% if (applicant.resumePath) { %>
+          <p><a href="/<%= applicant.resumePath %>" target="_blank">View Resume</a></p>
+        <% } %>
+      </li>
+    <% }) %>
+  </ul>
+
+  <div class="pagination">
+    <% if (hasPrev) { %>
+      <a href="/jobs/<%= job.id %>/applicants?page=<%= currentPage - 1 %>">Previous</a>
+    <% } %>
+    <span>Page <%= currentPage %> of <%= totalPages %></span>
+    <% if (hasNext) { %>
+      <a href="/jobs/<%= job.id %>/applicants?page=<%= currentPage + 1 %>">Next</a>
+    <% } %>
+  </div>
+<% } %>

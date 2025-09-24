@@ -1,0 +1,25 @@
+<% layout('layout') %>
+
+<h2>Update Job</h2>
+<% if (errors && errors.length > 0) { %>
+  <ul class="errors">
+    <% errors.forEach(error => { %>
+      <li><%= error %></li>
+    <% }) %>
+  </ul>
+<% } %>
+<form action="/jobs/<%= job.id %>/update" method="POST">
+  <label for="title">Title:</label>
+  <input type="text" id="title" name="title" value="<%= formData.title || '' %>" required>
+
+  <label for="description">Description:</label>
+  <textarea id="description" name="description" required><%= formData.description || '' %></textarea>
+
+  <label for="location">Location:</label>
+  <input type="text" id="location" name="location" value="<%= formData.location || '' %>" required>
+
+  <label for="salary">Salary:</label>
+  <input type="number" id="salary" name="salary" value="<%= formData.salary || '' %>" required>
+
+  <button type="submit">Update Job</button>
+</form>

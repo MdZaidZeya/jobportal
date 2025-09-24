@@ -1,0 +1,249 @@
+/* Updated styles for job portal to replicate UI similar to the reference site */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #e9ecef;
+  color: #212529;
+}
+
+header {
+  background-color: #007bff;
+  color: white;
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1140px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav a:hover, nav a:focus {
+  color: #ffc107;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  cursor: pointer;
+  user-select: none;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 4px;
+  overflow: hidden;
+  top: 100%;
+  left: 0;
+}
+
+.dropdown-content a {
+  color: #212529;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-weight: 500;
+}
+
+.dropdown-content a:hover {
+  background-color: #f8f9fa;
+  color: #007bff;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.search-form {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.search-form input {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 20px;
+  width: 200px;
+  transition: width 0.3s ease;
+}
+
+.search-form input:focus {
+  width: 300px;
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0,123,255,0.5);
+}
+
+.search-form button {
+  padding: 0.5rem 1rem;
+  background-color: #ffc107;
+  color: #212529;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.search-form button:hover {
+  background-color: #e0a800;
+}
+
+.last-visit {
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  color: #6c757d;
+  text-align: center;
+}
+
+main {
+  max-width: 1140px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+  min-height: 80vh;
+}
+
+form {
+  padding: 2rem;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #495057;
+}
+
+input, textarea, button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #495057;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0,123,255,0.5);
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.errors {
+  color: #dc3545;
+  list-style: none;
+  padding: 0;
+  margin-top: 0.5rem;
+}
+
+.job-list, .applicant-list {
+  list-style: none;
+  padding: 0;
+}
+
+.job-list li, .applicant-list li {
+  background: #f8f9fa;
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.job-list li:hover, .applicant-list li:hover {
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.job-list li h3, .applicant-list li h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #007bff;
+}
+
+.job-list li p, .applicant-list li p {
+  margin: 0.25rem 0;
+  color: #495057;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.pagination a {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.pagination a:hover {
+  background-color: #0056b3;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #007bff;
+  color: white;
+  margin-top: 2rem;
+  font-weight: 600;
+}

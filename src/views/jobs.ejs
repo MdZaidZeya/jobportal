@@ -1,0 +1,33 @@
+<% layout('layout') %>
+
+<h2>Job Listings</h2>
+
+<% if (jobs.length === 0) { %>
+  <p>No jobs available at the moment.</p>
+<% } else { %>
+  <ul class="job-list">
+    <% jobs.forEach(job => { %>
+      <li>
+        <h3><a href="/jobs/<%= job.id %>"><%= job.title %></a></h3>
+        <p><%= job.description.substring(0, 100) %>...</p>
+        <p>Location: <%= job.location %></p>
+        <p>Salary: $<%= job.salary %></p>
+        <% if (job.isOwner) { %>
+          <a href="/jobs/<%= job.id %>/update">Edit</a> |
+          <a href="/jobs/<%= job.id %>/delete" class="delete-link">Delete</a> |
+          <a href="/jobs/<%= job.id %>/applicants">View Applicants</a>
+        <% } %>
+      </li>
+    <% }) %>
+  </ul>
+
+  <div class="pagination">
+    <% if (hasPrev) { %>
+      <a href="/jobs?page=<%= currentPage - 1 %>&search=<%= search || '' %>">Previous</a>
+    <% } %>
+    <span>Page <%= currentPage %> of <%= totalPages %></span>
+    <% if (hasNext) { %>
+      <a href="/jobs?page=<%= currentPage + 1 %>&search=<%= search || '' %>">Next</a>
+    <% } %>
+  </div>
+<% } %>

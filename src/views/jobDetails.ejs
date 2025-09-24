@@ -1,0 +1,25 @@
+<% layout('layout') %>
+
+<h2><%= job.title %></h2>
+<p><strong>Description:</strong> <%= job.description %></p>
+<p><strong>Location:</strong> <%= job.location %></p>
+<p><strong>Salary:</strong> $<%= job.salary %></p>
+
+<% if (!user) { %>
+  <h3>Apply for this Job</h3>
+  <form action="/apply/<%= job.id %>" method="POST" enctype="multipart/form-data">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="contact">Contact:</label>
+    <input type="text" id="contact" name="contact" required>
+
+    <label for="resume">Resume:</label>
+    <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx">
+
+    <button type="submit">Apply</button>
+  </form>
+<% } %>
